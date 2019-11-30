@@ -32,8 +32,7 @@ class ApplicationController < Sinatra::Base
   end
   
   put '/articles/:id' do |id|
-    @article = Article.update(params[:article], id)
-    @article.save
+    Article.update(params[:article], id)
     binding.pry
   end
   
