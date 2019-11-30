@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
   end
   
   patch '/articles/:id' do |id|
-    Article.update(params[:article], id.to_i)
+    Article.update(id, params[:article])
     redirect "/articles/#{id}"
   end
   
